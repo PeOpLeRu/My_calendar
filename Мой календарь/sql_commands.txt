@@ -1,0 +1,75 @@
+-- mysql -ur1 -hlocalhost -p
+
+--  drop database `calendar_tasks`;
+
+create database `calendar_tasks`;
+
+use `calendar_tasks`;
+
+CREATE TABLE `types` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  PRIMARY KEY(`id`)
+);
+
+INSERT INTO `types` (`name`) VALUES
+('Дело'),
+('Встреча'), 
+('Звонок'), 
+('Помощь'), 
+('Отдых'), 
+('Работа'), 
+('Рутина'), 
+('Саморазвитие');
+
+CREATE TABLE `durations` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  PRIMARY KEY(`id`)
+);
+
+INSERT INTO `durations` (`name`) VALUES
+('Менее часа'),
+('1 час'),
+('1-2 часа'),
+('2 часа'),
+('1-3 часа'),
+('3 часа'),
+('4-5 часов'),
+('Более 5 часов'),
+('Неопределенно');
+
+CREATE TABLE `statuses` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(30) NOT NULL,
+  PRIMARY KEY(`id`)
+);
+
+INSERT INTO `statuses` (`name`) VALUES
+('Текущая задача'),
+('Выполненная задача');
+
+CREATE TABLE `tasks` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `topic` VARCHAR(255) NOT NULL,
+  `type` INT(10) NOT NULL,
+  `place` VARCHAR(255) NOT NULL,
+  `date` VARCHAR(10) NOT NULL,
+  `time` VARCHAR(5) NOT NULL,
+  `duration` INT(10) NOT NULL,
+  `comment` VARCHAR(255) NOT NULL,
+  `status` INT(10) NOT NULL DEFAULT 1,
+  PRIMARY KEY(`id`),
+  INDEX `type` (`type`),
+  INDEX `duration` (`duration`)
+  );
+
+INSERT INTO `tasks` VALUES 
+(1,'task',6,'home and ISU','2022-05-18','19:30',8,'do home work',2),
+(2,'Begin session',6,'ISU','2022-05-25','00:00',9,'Пора учиться',1),
+(3,'CHILL',5,'my head','2022-05-21','00:00',5,'happy birthday',1),
+(4,'RIDE ON БАЙКАЛ',5,'Байкал','2022-07-13','06:30',9,'',1),
+(5,'Пожарить картохи',7,'my house','2022-05-18','21:20',2,'хавчик',1),
+(6,'Кант',8,'brain','2022-05-18','20:21',1,'Я в своем познании настолько преисполнился, что я как будто бы уже',1),
+(7,'Кант',8,'brain','2022-05-18','20:22',1,'сто триллионов миллиардов лет проживаю на триллионах и триллионах таких же планет, как эта Земля, мне этот мир абсолютно',1),
+(8,'Кант',8,'brain','2022-05-18','20:23',1,'понятен, и я здесь ищу только одного - покоя, умиротворения и вот этой гармонии, от слияния с бесконечно вечным, от созерцания великого фрактального подобия и от вот этого замечательного всеединства',1);

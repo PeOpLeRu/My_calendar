@@ -1,0 +1,112 @@
+body {
+    font-size: 14px;
+}
+
+input, select, textarea {
+    font-size: 13px;
+}
+
+.main_cont
+{
+    border: 1px solid black;
+    margin: 20px auto;
+    width: 70%;
+}
+
+.main_cont_header
+{
+    margin-left: 3%;
+}
+
+.task_cont, .list_cont
+{
+    border: 1px solid black;
+    width: 96%;
+    margin: 20px auto;
+    padding-bottom: 2%;
+}
+
+.task_cont_header
+{
+    margin-left: 2%;
+}
+
+.form_cont_field
+{
+    display: flex;
+    align-items: start;
+    margin: 15px 0;
+    margin-left: 20%;
+    font-size: 14px;
+}
+
+.form_cont_label_header
+{
+    display: inline-block;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 15%;
+    text-align: right;
+}
+
+.form_cont_input_item
+{
+    width: 20%;
+}
+
+.form_cont_input_select
+{
+    width: 13%;
+}
+
+.form_cont_field_input_date
+{
+    margin-right: 2%;
+}
+
+.form_cont_button
+{
+    margin-left: 36%;
+    font-size: 11px;
+}
+
+.list_cont_header
+{
+    margin-left: 2%;
+}
+
+.list_cont_menu, .list_cont_tasks
+{
+    margin: 0 2% 2% 2%;
+}
+
+.list_cont_menu > input, select, span
+{
+    margin: 0 1% 0 1%;
+}
+
+.list_cont_menu > span
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.list_cont_tasks > table
+{
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    overflow-x: auto;
+}
+
+.list_cont_tasks > tr, th, td
+{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.list_cont_tasks_td_taskName
+{
+    color: blue;
+    cursor: pointer;
+}
